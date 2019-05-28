@@ -6,35 +6,65 @@ body {
 }
 
 button {
-    padding: 1%;
+    padding: 5%;
     margin: 10px;
     border-radius: 5px;
     background-color: gainsboro;
     border: 1px gainsboro;
+    width: auto;
+    font-size: 15px;
 }
-input {
-    border-radius: 15px;
-    padding: 5px;
+.input_div {
+    border-radius: 25px;
     width: 600px;
     font-size: 30px;
+    border: 2px solid gainsboro;
+    display: flex;
+    justify-content: space-around;
+}
+
+input{
+    width: 400px;
+    border: none;
+    font-size: 25px;
+    padding: 5px;
 }
 
 h1 {
     font-size: 80px;
 }
 
+a {
+    padding: 5px;
+}
+
 .content{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
+    align-items: center;
+    margin-top: 10vw;
 }
 
-img {
-    
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+
 }
 
-button:hover{
-
-    border: 1px lightgray;
+.btn:hover{
+    border: 2px lightgray;
 }
+
+#grid_div {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    margin: 5px;
+}
+
+i{
+    padding: 10px;
+}
+
