@@ -4,6 +4,13 @@
        <link rel="stylesheet" href="styles.css">
        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+       <script>
+        document.getElementsByClassName("zawartosc-input-text")[0].addEventListener("focus", () => document.getElementsByClassName("zawartosc-input")[0].classList.add("zad1-Search--isActive"));
+        document.getElementsByClassName("zawartosc-input-text")[0].addEventListener("blur", () => document.getElementsByClassName("zawartosc-input")[0].classList.remove("zad1-Search--isActive")); 
+    </script>
+    
+
     </head>
         <body> 
         <div id="navbar">
@@ -15,12 +22,18 @@
             
         <div id="app" class="content">
             <img class="center" src="logo1.png">
-            <div class ="input_div"><i class="fas fa-search" id="search"></i><form class="center"></i><input type="text"></form><i class="fas fa-keyboard"><i class="fas fa-microphone"></i>
-            </i>
-            </div>
+            <form class="cls-input" id="app">
+                <i id="icon-margins" id="blue" class="fas fa-search"></i>
+                <input class="zawartosc-input-text" type="text" v-model="inputContent"/>
+                <i id="icon-margins" id="lightgrey" class="fas fa-keyboard"></i>
+                <i id="icon-margins" id="blue" class="fas fa-microphone"></i>
+        
+                    </form>
+                      <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
             <div class="center", id="grid_div"><button type="button" class="btn" id="but1">Szukaj w Google</button> <button type="button" class = "btn", id="but2"> Szczęśliwy traf</button> </div>
         </div>
 
-    
+        <script src="animals.js"></script>
+        <script src="autocompleter.js"></script>
     </body>
 </html>
