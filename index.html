@@ -6,8 +6,8 @@
        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
        <script>
-        document.getElementsByClassName("zawartosc-input-text")[0].addEventListener("focus", () => document.getElementsByClassName("zawartosc-input")[0].classList.add("zad1-Search--isActive"));
-        document.getElementsByClassName("zawartosc-input-text")[0].addEventListener("blur", () => document.getElementsByClassName("zawartosc-input")[0].classList.remove("zad1-Search--isActive")); 
+        document.getElementsByClassName("content-input-text")[0].addEventListener("focus", () => document.getElementsByClassName("zawartosc-input")[0].classList.add("zad1-Search--isActive"));
+        document.getElementsByClassName("content-input-text")[0].addEventListener("blur", () => document.getElementsByClassName("zawartosc-input")[0].classList.remove("zad1-Search--isActive")); 
     </script>
     
 
@@ -19,19 +19,22 @@
             <i class="fas fa-th"></i>
             <i class="fas fa-user"></i>
         </div> 
-            
-        <div id="app" class="content">
-            <img class="center" src="logo1.png">
-            <form class="cls-input" id="app">
-                <i id="icon-margins" id="blue" class="fas fa-search"></i>
-                <input class="zawartosc-input-text" type="text" v-model="inputContent"/>
-                <i id="icon-margins" id="lightgrey" class="fas fa-keyboard"></i>
-                <i id="icon-margins" id="blue" class="fas fa-microphone"></i>
-        
-                    </form>
-                      <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
-            <div class="center", id="grid_div"><button type="button" class="btn" id="but1">Szukaj w Google</button> <button type="button" class = "btn", id="but2"> Szczęśliwy traf</button> </div>
-        </div>
+        <main class="content">
+            <img class="zawartosc-logo" src="logo1.png" alt="logo">
+                  <form class="cls-input" id="app">
+              <i id="icon-margins" id="blue" class="fas fa-search"></i>
+              <input class="content-input-text" type="text" v-model="inputContent"/>
+              <i id="icon-margins" id="lightgrey" class="fas fa-keyboard"></i>
+              <i id="icon-margins" id="blue" class="fas fa-microphone"></i>
+      
+                  </form>
+                    <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
+            <br/>
+                  <div id="przycisk">
+              <button class="btn" v-if="!inputContent">Szukaj w Google</button>
+              <button class="btn" v-if="!inputContent">Szczęśliwy traf</button>
+            </div>
+        </main>
 
         <script src="animals.js"></script>
         <script src="autocompleter.js"></script>

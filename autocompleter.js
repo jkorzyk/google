@@ -20,7 +20,7 @@ Vue.component('v-autocompleter', {
 })
 
     new Vue({
-        el: ".zawartosc",
+        el: ".content",
         data: function () {
             return {
                 inputContent: "",
